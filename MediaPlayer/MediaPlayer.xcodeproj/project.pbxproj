@@ -29,6 +29,27 @@
 			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = UIKit;
 		};
+		EB0C39D117B9336600214F96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C16787213C71F8A00814195 /* UIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F95F642915C34D6900F3523B;
+			remoteInfo = "UIKit Specs (OSX)";
+		};
+		EB0C39D317B9336600214F96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C16787213C71F8A00814195 /* UIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F9FFDE1D15C6E88A000EDAA0;
+			remoteInfo = "Test Harness";
+		};
+		EB0C39D517B9336600214F96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C16787213C71F8A00814195 /* UIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F9FFDE3315C6E88A000EDAA0;
+			remoteInfo = "UIKit Specs (iOS)";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -144,6 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				4C16787A13C71F8A00814195 /* UIKit.framework */,
+				EB0C39D217B9336600214F96 /* UIKit Specs (OSX).octest */,
+				EB0C39D417B9336600214F96 /* TestHarness.app */,
+				EB0C39D617B9336600214F96 /* UIKit Specs (iOS).octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,6 +251,27 @@
 			remoteRef = 4C16787913C71F8A00814195 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		EB0C39D217B9336600214F96 /* UIKit Specs (OSX).octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "UIKit Specs (OSX).octest";
+			remoteRef = EB0C39D117B9336600214F96 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EB0C39D417B9336600214F96 /* TestHarness.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TestHarness.app;
+			remoteRef = EB0C39D317B9336600214F96 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EB0C39D617B9336600214F96 /* UIKit Specs (iOS).octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "UIKit Specs (iOS).octest";
+			remoteRef = EB0C39D517B9336600214F96 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -260,10 +305,7 @@
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../UIKit/build/$(CONFIGURATION)";
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -286,10 +328,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/UIKit/build/$(CONFIGURATION)";
 				FRAMEWORK_VERSION = A;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
