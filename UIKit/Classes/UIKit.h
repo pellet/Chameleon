@@ -124,3 +124,7 @@
 
 // SystemConfiguration-Helper
 #define kSCNetworkReachabilityFlagsIsWWAN kSCNetworkReachabilityFlagsConnectionOnDemand
+
+#pragma mark - @@@BP Added protocol stub for UIStateRestoration
+#import "UIStateRestoration.h"
+#pragma mark - @@@BP

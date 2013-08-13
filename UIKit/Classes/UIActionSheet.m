@@ -108,6 +108,13 @@
     _delegateHas.actionSheetCancel = [_delegate respondsToSelector:@selector(actionSheetCancel:)];
 }
 
+#pragma mark - @@@BP Added required method
+- (NSString *)buttonTitleAtIndex:(NSInteger)index
+{
+    return [_menuTitles objectAtIndex:index];
+}
+#pragma mark - @@@BP
+
 - (NSInteger)addButtonWithTitle:(NSString *)title
 {
     [_menuTitles addObject:title ?: @""];

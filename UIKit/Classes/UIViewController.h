@@ -32,6 +32,10 @@
 #import "UISearchDisplayController.h"
 #import "UITabBarItem.h"
 
+#pragma mark - @@@BP UIRestoration
+#import "UIStateRestoration.h"
+#pragma mark - @@@BP
+
 @class UITabBarController;
 
 typedef enum {
@@ -73,6 +77,10 @@ typedef enum {
 - (void)viewDidLayoutSubviews;
 
 - (void)presentModalViewController:(UIViewController *)modalViewController animated:(BOOL)animated;		// works, but not exactly correctly.
+#pragma mark - @@@BP
+- (void)presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)isAnimated completion:(void (^)(void))completion;
+- (void)dismissViewControllerAnimated:(BOOL)isAnimated completion:(void (^)(void))completion;
+#pragma mark -
 - (void)dismissModalViewControllerAnimated:(BOOL)animated;												// see comments in dismissModalViewController
 
 - (void)didReceiveMemoryWarning;	// doesn't do anything and is never called...
@@ -128,4 +136,19 @@ typedef enum {
 - (BOOL) shouldPerformSegueWithIdentifier:(NSString*)identifier sender:(id)sender;
 - (void) prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender;
 
+#pragma mark - @@@BP ChildViewControllers
+@property (nonatomic, readonly) NSMutableArray *childViewControllers;
+
+#pragma mark - @@@BP UIStateRestoration
+@property (nonatomic, retain) NSString *restorationIdentifier;
+@property (nonatomic, retain) id restorationClass;
+
 @end
+
+@interface UIViewController (UIStateRestoration)
+@property (nonatomic, copy) NSString *restorationIdentifier;
+@property (nonatomic, readwrite, assign) Class<UIViewControllerRestoration> restorationClass;
+- (void) encodeRestorableStateWithCoder:(NSCoder *)coder;
+- (void) decodeRestorableStateWithCoder:(NSCoder *)coder;
+@end
+

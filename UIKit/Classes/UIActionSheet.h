@@ -54,6 +54,10 @@ typedef enum {
 - (id)initWithTitle:(NSString *)title delegate:(id<UIActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ...;
 - (NSInteger)addButtonWithTitle:(NSString *)title;
 
+#pragma mark - @@@BP Added required method
+- (NSString *)buttonTitleAtIndex:(NSInteger)index;
+#pragma mark - @@@BP
+
 - (void)showInView:(UIView *)view;														// menu will appear wherever the mouse cursor is
 - (void)showFromRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated;		// if rect is CGRectNull, the menu will appear wherever the mouse cursor is
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated;

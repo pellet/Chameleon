@@ -191,3 +191,11 @@ typedef NSUInteger UIViewAnimationOptions;
 @property (nonatomic,copy) NSArray *gestureRecognizers;
 
 @end
+
+#pragma mark - @@@BP UIStateRestoration
+@interface UIView (UIStateRestoration)
+@property (nonatomic, copy) NSString *restorationIdentifier;
+- (void) encodeRestorableStateWithCoder:(NSCoder *)coder;
+- (void) decodeRestorableStateWithCoder:(NSCoder *)coder;
+@end
+#pragma mark - @@@BP

@@ -78,6 +78,14 @@ static const CGFloat ToolbarHeight = 28;
 	return self;
 }
 
+#pragma mark - @@@BP Added placeholder.
+- (NSObject *)initWithNavigationBarClass:(Class)navigationBarClass toolbarClass:(Class)toolbarClass
+{
+    self = [self initWithNibName:nil bundle:nil];
+    return self;
+}
+#pragma mark -
+
 
 - (void)setDelegate:(id<UINavigationControllerDelegate>)newDelegate
 {

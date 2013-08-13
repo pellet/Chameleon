@@ -41,6 +41,10 @@
 
 - (id)initWithRootViewController:(UIViewController *)rootViewController;
 
+#pragma mark - @@@BP Added placeholder.
+- (NSObject *)initWithNavigationBarClass:(Class)navigationBarClass toolbarClass:(Class)toolbarClass;
+#pragma mark -
+
 - (void)setViewControllers:(NSArray *)newViewControllers animated:(BOOL)animated;
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated;

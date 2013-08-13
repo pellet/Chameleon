@@ -77,6 +77,10 @@ static NSString* const kUIStoryboardSegueTemplatesKey           = @"UIStoryboard
 
 - (id)init
 {
+#pragma mark - @@@BP Added
+    _childViewControllers = [NSMutableArray new];
+#pragma mark -
+    
     NSBundle* bundle = [NSBundle bundleForClass:[self class]];
     NSString* nibPath = [bundle pathForResource:NSStringFromClass([self class]) ofType:@"nib"];
     if (nibPath && bundle) {
@@ -307,6 +311,20 @@ static NSString* const kUIStoryboardSegueTemplatesKey           = @"UIStoryboard
     }
 }
 
+#pragma mark - @@@BP
+- (void)presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)isAnimated completion:(void (^)(void))completion
+{
+    [self presentModalViewController:viewControllerToPresent animated:isAnimated];
+    dispatch_async(dispatch_get_main_queue(), completion);
+}
+
+- (void)dismissViewControllerAnimated:(BOOL)isAnimated completion:(void (^)(void))completion
+{
+    [self dismissModalViewControllerAnimated:isAnimated];
+    dispatch_async(dispatch_get_main_queue(), completion);
+}
+#pragma mark -
+
 - (void)dismissModalViewControllerAnimated:(BOOL)animated
 {
     // NOTE: This is not implemented entirely correctly - the actual dismissModalViewController is somewhat subtle.
@@ -356,6 +374,9 @@ static NSString* const kUIStoryboardSegueTemplatesKey           = @"UIStoryboard
 {
     [childController willMoveToParentViewController:self];
     [childController _setParentViewController:self];
+#pragma mark - @@@BP Added
+    [self.childViewControllers addObject:childController];
+#pragma mark -
 }
 
 - (void)removeFromParentViewController

@@ -40,10 +40,11 @@ enum {
 };
 typedef NSUInteger UIWebViewNavigationType;
 
-@class UIWebView, UIViewAdapter, WebView;
+@class UIWebView, UIViewAdapter, WebView, UIScrollView;
 
 @protocol UIWebViewDelegate <NSObject>
 @optional
+- (void)webViewDidStartLoad:(UIWebView *)webView;
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
 - (void)webView:(UIWebView *)aWebView didFailLoadWithError:(NSError *)error;
 - (void)webViewDidFinishLoad:(UIWebView *)webView;
@@ -67,5 +68,12 @@ typedef NSUInteger UIWebViewNavigationType;
 @property (nonatomic, assign) BOOL scalesPageToFit; // not implemented
 @property (nonatomic, readonly, strong) NSURLRequest *request;
 @property (nonatomic) UIDataDetectorTypes dataDetectorTypes;
+
+#pragma mark - @@@BP Placeholders
+@property (nonatomic, readonly) UIScrollView *scrollView;
+@property (nonatomic) BOOL mediaPlaybackRequiresUserAction;
+@property (nonatomic) BOOL allowsInlineMediaPlayback;
+@property (nonatomic) BOOL mediaPlaybackAllowsAirPlay;
+#pragma mark -
 
 @end
